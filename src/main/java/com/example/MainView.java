@@ -238,3 +238,7 @@ public class MainView extends VerticalLayout {
         return layout;
     }
 }
+// CODIGO CUPON -> CODIGO QUE SE DEBE USAR
+// PORCENTAJE -> DESCUENTO
+// USOS CUPON -> CANTIDAD DE USOS QUE SE LE PUEDEN DAR
+// ESTADO CUPON -> SI EL CUPON ESTA ACTIVO O INACTIVO
