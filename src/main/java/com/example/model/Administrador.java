@@ -1,4 +1,4 @@
-package com.example;
+package com.example.model;
 
 public class Administrador {
  private String usuario_administrador;
