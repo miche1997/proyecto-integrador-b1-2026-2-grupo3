@@ -1,34 +1,33 @@
-# My Application README
+# Eat And Bite - Gestión de Entidades (CRUD)
 
-- [ ] TODO Replace or update this README with instructions relevant to your application.
+Gestión de Entidades de Eat And Bite, el cual contiene Clientes, Proveedores, Productos, Cupones y Administrador.
 
-To start the application in development mode, import it into your IDE and run the `Application` class. 
-You can also start the application from the command line by running: 
+El programa busca que los administradores puedan utiliza Crear, Leer, Actualizar y Eliminar datos de la base de datos con una mayor facilidad y una interfaz de usuario adecuada.
 
-```bash
+![Vista previa](docs/preview.png)
+
+## Inicializar la Gestión de Entidades
+
+Abre una terminal y utiliza el siguiente comando: 
+
+```
 ./mvnw
 ```
 
-To build the application in production mode, run:
+Para arranca el programa en modo producción, ejecuta:
 
 ```bash
 ./mvnw package
 ```
 
-To build a Docker image, run:
+Para crear una imagen Docker, ejecuta:
 
 ```bash
 docker build -t my-application:latest .
 ```
 
-If you use commercial components, pass the license key as a build secret:
+### Integrantes
 
-```bash
-docker build --secret id=proKey,src=$HOME/.vaadin/proKey .
-```
-
-## Getting Started
-
-The [Quick Start](https://vaadin.com/docs/v25/getting-started/quick-start) tutorial helps you get started with Vaadin in 
-around 10 minutes. This tutorial walks you through building a simple application, introducing the core concepts along 
-the way.
+- Samuel
+- Michell
+- Andrey
