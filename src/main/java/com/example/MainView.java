@@ -14,7 +14,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@PageTitle("Gestión CRUD - 2 Entidades")
+@PageTitle("Eat and Bite - DB")
 @Route("")
 public class MainView extends VerticalLayout {
 
@@ -23,7 +23,7 @@ public class MainView extends VerticalLayout {
         setPadding(true);
         setSpacing(true);
 
-        H2 titulo = new H2("Gestión de Entidades (CRUD)");
+        H2 titulo = new H2("Eat and Bite - Gestión de Entidades (CRUD)");
 
         TabSheet tabSheet = new TabSheet();
         tabSheet.setWidthFull();
@@ -31,7 +31,7 @@ public class MainView extends VerticalLayout {
         tabSheet.add("Clientes", crearSeccionEntidad1());
         tabSheet.add("Proveedores", crearSeccionEntidad2());
         tabSheet.add("Productos", crearSeccionEntidad3());
-        tabSheet.add("Administración", crearSeccionEntidad4());
+        tabSheet.add("Administrador", crearSeccionEntidad4());
 
         add(titulo, tabSheet);
     }
@@ -43,32 +43,36 @@ public class MainView extends VerticalLayout {
 
         TextField idField = new TextField("ID");
         TextField nombreField = new TextField("Nombre");
-        TextField descripcionField = new TextField("Descripción");
+        TextField emailField = new TextField("Email");
+        TextField telefonoField = new TextField("Teléfono");
+        TextField direccionField = new TextField("Dirección");
 
-        FormLayout form = new FormLayout(idField, nombreField, descripcionField);
+        FormLayout form = new FormLayout(idField, nombreField, emailField, telefonoField, direccionField);
 
         Button btnCrear = new Button("Crear", e -> 
-            Notification.show("Entidad 1 - Crear: " + nombreField.getValue())
+            Notification.show("Clientes - Crear: " + nombreField.getValue())
         );
         btnCrear.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
         Button btnConsultar = new Button("Consultar", e -> 
-            Notification.show("Entidad 1 - Consultar ID: " + idField.getValue())
+            Notification.show("Clientes - Consultar ID: " + idField.getValue())
         );
 
         Button btnActualizar = new Button("Actualizar", e -> 
-            Notification.show("Entidad 1 - Actualizar ID: " + idField.getValue())
+            Notification.show("Clientes - Actualizar ID: " + idField.getValue())
         );
 
         Button btnEliminar = new Button("Eliminar", e -> 
-            Notification.show("Entidad 1 - Eliminar ID: " + idField.getValue())
+            Notification.show("Clientes - Eliminar ID: " + idField.getValue())
         );
         btnEliminar.addThemeVariants(ButtonVariant.LUMO_ERROR);
 
         Button btnLimpiar = new Button("Limpiar", e -> {
             idField.clear();
             nombreField.clear();
-            descripcionField.clear();
+            emailField.clear();
+            telefonoField.clear();
+            direccionField.clear();
         });
 
         HorizontalLayout acciones = new HorizontalLayout(
@@ -79,7 +83,9 @@ public class MainView extends VerticalLayout {
         Grid<String[]> grid = new Grid<>();
         grid.addColumn(row -> row[0]).setHeader("ID").setAutoWidth(true);
         grid.addColumn(row -> row[1]).setHeader("Nombre").setAutoWidth(true);
-        grid.addColumn(row -> row[2]).setHeader("Descripción").setAutoWidth(true);
+        grid.addColumn(row -> row[2]).setHeader("Email").setAutoWidth(true);
+        grid.addColumn(row -> row[3]).setHeader("Teléfono").setAutoWidth(true);
+
 
         layout.add(form, acciones, grid);
         return layout;
@@ -97,20 +103,20 @@ public class MainView extends VerticalLayout {
         FormLayout form = new FormLayout(idField, tituloField, categoriaField);
 
         Button btnCrear = new Button("Crear", e -> 
-            Notification.show("Entidad 2 - Crear: " + tituloField.getValue())
+            Notification.show("Proveedores - Crear: " + tituloField.getValue())
         );
         btnCrear.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
         Button btnConsultar = new Button("Consultar", e -> 
-            Notification.show("Entidad 2 - Consultar Código: " + idField.getValue())
+            Notification.show("Proveedores - Consultar Código: " + idField.getValue())
         );
 
         Button btnActualizar = new Button("Actualizar", e -> 
-            Notification.show("Entidad 2 - Actualizar Código: " + idField.getValue())
+            Notification.show("Proveedores - Actualizar Código: " + idField.getValue())
         );
 
         Button btnEliminar = new Button("Eliminar", e -> 
-            Notification.show("Entidad 2 - Eliminar Código: " + idField.getValue())
+            Notification.show("Proveedores - Eliminar Código: " + idField.getValue())
         );
         btnEliminar.addThemeVariants(ButtonVariant.LUMO_ERROR);
 
@@ -144,20 +150,20 @@ public class MainView extends VerticalLayout {
         FormLayout form = new FormLayout(idField, tituloField, categoriaField);
 
         Button btnCrear = new Button("Crear", e -> 
-            Notification.show("Entidad 2 - Crear: " + tituloField.getValue())
+            Notification.show("Productos - Crear: " + tituloField.getValue())
         );
         btnCrear.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
         Button btnConsultar = new Button("Consultar", e -> 
-            Notification.show("Entidad 2 - Consultar Código: " + idField.getValue())
+            Notification.show("Productos - Consultar Código: " + idField.getValue())
         );
 
         Button btnActualizar = new Button("Actualizar", e -> 
-            Notification.show("Entidad 2 - Actualizar Código: " + idField.getValue())
+            Notification.show("Productos - Actualizar Código: " + idField.getValue())
         );
 
         Button btnEliminar = new Button("Eliminar", e -> 
-            Notification.show("Entidad 2 - Eliminar Código: " + idField.getValue())
+            Notification.show("Productos - Eliminar Código: " + idField.getValue())
         );
         btnEliminar.addThemeVariants(ButtonVariant.LUMO_ERROR);
 
@@ -191,20 +197,20 @@ public class MainView extends VerticalLayout {
         FormLayout form = new FormLayout(idField, tituloField, categoriaField);
 
         Button btnCrear = new Button("Crear", e -> 
-            Notification.show("Entidad 2 - Crear: " + tituloField.getValue())
+            Notification.show("Administrador - Crear: " + tituloField.getValue())
         );
         btnCrear.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
         Button btnConsultar = new Button("Consultar", e -> 
-            Notification.show("Entidad 2 - Consultar Código: " + idField.getValue())
+            Notification.show("Administrador - Consultar Código: " + idField.getValue())
         );
 
         Button btnActualizar = new Button("Actualizar", e -> 
-            Notification.show("Entidad 2 - Actualizar Código: " + idField.getValue())
+            Notification.show("Administrador - Actualizar Código: " + idField.getValue())
         );
 
         Button btnEliminar = new Button("Eliminar", e -> 
-            Notification.show("Entidad 2 - Eliminar Código: " + idField.getValue())
+            Notification.show("Administrador - Eliminar Código: " + idField.getValue())
         );
         btnEliminar.addThemeVariants(ButtonVariant.LUMO_ERROR);
 
