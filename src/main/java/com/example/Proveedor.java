@@ -2,15 +2,19 @@ package com.example;
 
 public class Proveedor {
   private String idProveedor;
+  private String nombreCompleto;
+  private String telefono;
   private String contraseña;
  //constructores 
 
 public Proveedor (){
    
 }
-  public Proveedor(String idProveedor, String contraseña) {
+  public Proveedor(String idProveedor, String contraseña,String nombreCompleto, String telefono) {
     this.idProveedor = idProveedor;
     this.contraseña = contraseña;
+    this.nombreCompleto = nombreCompleto;
+    this.telefono = telefono;
   }
  // getters  and setters 
   public String getIdProveedor() {
@@ -25,7 +29,7 @@ public Proveedor (){
   public void setContraseña(String contraseña) {
     this.contraseña = contraseña;
   }
- 
+  
 
 
 
