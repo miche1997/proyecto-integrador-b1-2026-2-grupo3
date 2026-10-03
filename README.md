@@ -1,34 +1,65 @@
-# My Application README
+# Eat And Bite - Gestión de Entidades (CRUD)
 
-- [ ] TODO Replace or update this README with instructions relevant to your application.
+Gestión de Entidades de Eat And Bite, el cual contiene Clientes, Proveedores, Productos, Cupones y Administrador.
 
-To start the application in development mode, import it into your IDE and run the `Application` class. 
-You can also start the application from the command line by running: 
+El programa busca que los administradores puedan Crear, Leer, Actualizar y Eliminar datos con mayor facilidad y una interfaz de usuario adecuada. La conexión con una base de datos todavía no está implementada.
+
+![Vista previa](preview.png)
+
+## Tecnologías
+
+- Java 25
+- Spring Boot 4
+- Vaadin 25
+
+## Requisitos
+
+- Java 25 instalado (no hace falta instalar Maven, el proyecto incluye su propio wrapper).
+
+## Inicializar la Gestión de Entidades
+
+Abre una terminal en la carpeta del proyecto y utiliza el siguiente comando.
+
+En Windows (PowerShell):
+
+```powershell
+.\mvnw.cmd
+```
+
+En Linux, macOS o Git Bash:
 
 ```bash
 ./mvnw
 ```
 
-To build the application in production mode, run:
+Cuando la consola muestre `Started Application`, la página estará disponible en http://localhost:8080. El navegador se abre automáticamente; la primera vez tarda varios minutos porque descarga las dependencias.
+
+Para detener el programa, presiona `Ctrl + C` en la terminal.
+
+## Compilar para producción
+
+Para generar el archivo `.jar` en modo producción, ejecuta:
 
 ```bash
 ./mvnw package
 ```
 
-To build a Docker image, run:
+Y para arrancarlo:
 
 ```bash
-docker build -t my-application:latest .
+java -jar target/app-1.0-SNAPSHOT.jar
 ```
 
-If you use commercial components, pass the license key as a build secret:
+## Docker
+
+Para crear una imagen Docker, ejecuta:
 
 ```bash
-docker build --secret id=proKey,src=$HOME/.vaadin/proKey .
+docker build -t eat-and-bite:latest .
 ```
 
-## Getting Started
+## Integrantes
 
-The [Quick Start](https://vaadin.com/docs/v25/getting-started/quick-start) tutorial helps you get started with Vaadin in 
-around 10 minutes. This tutorial walks you through building a simple application, introducing the core concepts along 
-the way.
+- Samuel
+- Michell
+- Andrey
