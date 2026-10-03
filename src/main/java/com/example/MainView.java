@@ -46,8 +46,9 @@ public class MainView extends VerticalLayout {
         TextField emailField = new TextField("Email");
         TextField telefonoField = new TextField("Teléfono");
         TextField direccionField = new TextField("Dirección");
+        TextField estadoField = new TextField("Estado");
 
-        FormLayout form = new FormLayout(idField, nombreField, emailField, telefonoField, direccionField);
+        FormLayout form = new FormLayout(idField, nombreField, emailField, telefonoField, direccionField, estadoField);
 
         Button btnCrear = new Button("Crear", e -> 
             Notification.show("Clientes - Crear: " + nombreField.getValue())
@@ -73,6 +74,7 @@ public class MainView extends VerticalLayout {
             emailField.clear();
             telefonoField.clear();
             direccionField.clear();
+            estadoField.clear();
         });
 
         HorizontalLayout acciones = new HorizontalLayout(
@@ -85,6 +87,8 @@ public class MainView extends VerticalLayout {
         grid.addColumn(row -> row[1]).setHeader("Nombre").setAutoWidth(true);
         grid.addColumn(row -> row[2]).setHeader("Email").setAutoWidth(true);
         grid.addColumn(row -> row[3]).setHeader("Teléfono").setAutoWidth(true);
+        grid.addColumn(row -> row[4]).setHeader("Dirección").setAutoWidth(true);
+        grid.addColumn(row -> row[5]).setHeader("Estado").setAutoWidth(true);
 
 
         layout.add(form, acciones, grid);
