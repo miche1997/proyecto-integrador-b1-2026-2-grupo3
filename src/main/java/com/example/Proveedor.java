@@ -12,6 +12,19 @@ public Proveedor (){
     this.idProveedor = idProveedor;
     this.contraseña = contraseña;
   }
+ // getters  and setters 
+  public String getIdProveedor() {
+    return idProveedor;
+  }
+  public void setIdProveedor(String idProveedor) {
+    this.idProveedor = idProveedor;
+  }
+  public String getContraseña() {
+    return contraseña;
+  }
+  public void setContraseña(String contraseña) {
+    this.contraseña = contraseña;
+  }
  
 
 
