@@ -14,7 +14,7 @@ El programa busca que los administradores puedan Crear, Leer, Actualizar y Elimi
 
 ## Requisitos
 
-- Java 25 instalado (no hace falta instalar Maven, el proyecto incluye su propio wrapper).
+- Java 25 instalado.
 
 ## Inicializar la Gestión de Entidades
 
@@ -60,6 +60,6 @@ docker build -t eat-and-bite:latest .
 
 ## Integrantes
 
-- Samuel
-- Michell
-- Andrey
+- Samuel Pulgarin Chavarria
+- Michell Paola Gonzalez Comas
+- Andrey Hernandez Patiño
