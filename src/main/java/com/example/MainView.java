@@ -28,8 +28,10 @@ public class MainView extends VerticalLayout {
         TabSheet tabSheet = new TabSheet();
         tabSheet.setWidthFull();
 
-        tabSheet.add("Entidad 1", crearSeccionEntidad1());
-        tabSheet.add("Entidad 2", crearSeccionEntidad2());
+        tabSheet.add("Clientes", crearSeccionEntidad1());
+        tabSheet.add("Proveedores", crearSeccionEntidad2());
+        tabSheet.add("Productos", crearSeccionEntidad3());
+        tabSheet.add("Administración", crearSeccionEntidad4());
 
         add(titulo, tabSheet);
     }
@@ -85,6 +87,100 @@ public class MainView extends VerticalLayout {
 
     // Método privado para gestionar la segunda entidad
     private Component crearSeccionEntidad2() {
+        VerticalLayout layout = new VerticalLayout();
+        layout.setPadding(false);
+
+        TextField idField = new TextField("Código / ID");
+        TextField tituloField = new TextField("Título");
+        TextField categoriaField = new TextField("Categoría");
+
+        FormLayout form = new FormLayout(idField, tituloField, categoriaField);
+
+        Button btnCrear = new Button("Crear", e -> 
+            Notification.show("Entidad 2 - Crear: " + tituloField.getValue())
+        );
+        btnCrear.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+
+        Button btnConsultar = new Button("Consultar", e -> 
+            Notification.show("Entidad 2 - Consultar Código: " + idField.getValue())
+        );
+
+        Button btnActualizar = new Button("Actualizar", e -> 
+            Notification.show("Entidad 2 - Actualizar Código: " + idField.getValue())
+        );
+
+        Button btnEliminar = new Button("Eliminar", e -> 
+            Notification.show("Entidad 2 - Eliminar Código: " + idField.getValue())
+        );
+        btnEliminar.addThemeVariants(ButtonVariant.LUMO_ERROR);
+
+        Button btnLimpiar = new Button("Limpiar", e -> {
+            idField.clear();
+            tituloField.clear();
+            categoriaField.clear();
+        });
+
+        HorizontalLayout acciones = new HorizontalLayout(
+            btnCrear, btnConsultar, btnActualizar, btnEliminar, btnLimpiar
+        );
+        acciones.getStyle().set("flex-wrap", "wrap");
+
+        Grid<String[]> grid = new Grid<>();
+        grid.addColumn(row -> row[0]).setHeader("Código / ID").setAutoWidth(true);
+        grid.addColumn(row -> row[1]).setHeader("Título").setAutoWidth(true);
+        grid.addColumn(row -> row[2]).setHeader("Categoría").setAutoWidth(true);
+
+        layout.add(form, acciones, grid);
+        return layout;
+    }
+ private Component crearSeccionEntidad3() {
+        VerticalLayout layout = new VerticalLayout();
+        layout.setPadding(false);
+
+        TextField idField = new TextField("Código / ID");
+        TextField tituloField = new TextField("Título");
+        TextField categoriaField = new TextField("Categoría");
+
+        FormLayout form = new FormLayout(idField, tituloField, categoriaField);
+
+        Button btnCrear = new Button("Crear", e -> 
+            Notification.show("Entidad 2 - Crear: " + tituloField.getValue())
+        );
+        btnCrear.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+
+        Button btnConsultar = new Button("Consultar", e -> 
+            Notification.show("Entidad 2 - Consultar Código: " + idField.getValue())
+        );
+
+        Button btnActualizar = new Button("Actualizar", e -> 
+            Notification.show("Entidad 2 - Actualizar Código: " + idField.getValue())
+        );
+
+        Button btnEliminar = new Button("Eliminar", e -> 
+            Notification.show("Entidad 2 - Eliminar Código: " + idField.getValue())
+        );
+        btnEliminar.addThemeVariants(ButtonVariant.LUMO_ERROR);
+
+        Button btnLimpiar = new Button("Limpiar", e -> {
+            idField.clear();
+            tituloField.clear();
+            categoriaField.clear();
+        });
+
+        HorizontalLayout acciones = new HorizontalLayout(
+            btnCrear, btnConsultar, btnActualizar, btnEliminar, btnLimpiar
+        );
+        acciones.getStyle().set("flex-wrap", "wrap");
+
+        Grid<String[]> grid = new Grid<>();
+        grid.addColumn(row -> row[0]).setHeader("Código / ID").setAutoWidth(true);
+        grid.addColumn(row -> row[1]).setHeader("Título").setAutoWidth(true);
+        grid.addColumn(row -> row[2]).setHeader("Categoría").setAutoWidth(true);
+
+        layout.add(form, acciones, grid);
+        return layout;
+    }
+ private Component crearSeccionEntidad4() {
         VerticalLayout layout = new VerticalLayout();
         layout.setPadding(false);
 
