@@ -32,6 +32,7 @@ public class MainView extends VerticalLayout {
         tabSheet.add("Proveedores", crearSeccionEntidad2());
         tabSheet.add("Productos", crearSeccionEntidad3());
         tabSheet.add("Administrador", crearSeccionEntidad4());
+        tabSheet.add("Cupones", crearSeccionEntidad5());
 
         add(titulo, tabSheet);
     }
@@ -46,9 +47,9 @@ public class MainView extends VerticalLayout {
         TextField emailField = new TextField("Email");
         TextField telefonoField = new TextField("Teléfono");
         TextField direccionField = new TextField("Dirección");
-        TextField estadoField = new TextField("Estado");
+            
 
-        FormLayout form = new FormLayout(idField, nombreField, emailField, telefonoField, direccionField, estadoField);
+        FormLayout form = new FormLayout(idField, nombreField, emailField, telefonoField, direccionField);
 
         Button btnCrear = new Button("Crear", e -> 
             Notification.show("Clientes - Crear: " + nombreField.getValue())
@@ -74,7 +75,6 @@ public class MainView extends VerticalLayout {
             emailField.clear();
             telefonoField.clear();
             direccionField.clear();
-            estadoField.clear();
         });
 
         HorizontalLayout acciones = new HorizontalLayout(
@@ -87,8 +87,6 @@ public class MainView extends VerticalLayout {
         grid.addColumn(row -> row[1]).setHeader("Nombre").setAutoWidth(true);
         grid.addColumn(row -> row[2]).setHeader("Email").setAutoWidth(true);
         grid.addColumn(row -> row[3]).setHeader("Teléfono").setAutoWidth(true);
-        grid.addColumn(row -> row[4]).setHeader("Dirección").setAutoWidth(true);
-        grid.addColumn(row -> row[5]).setHeader("Estado").setAutoWidth(true);
 
 
         layout.add(form, acciones, grid);
@@ -237,7 +235,59 @@ public class MainView extends VerticalLayout {
         layout.add(form, acciones, grid);
         return layout;
     }
+ private Component crearSeccionEntidad5() {
+    VerticalLayout layout = new VerticalLayout();
+    layout.setPadding(false);
+
+    TextField codigoField = new TextField("Código Cupón");
+    TextField porcentajeField = new TextField("Porcentaje Descuento");
+    TextField usosField = new TextField("Usos Permitidos");
+    TextField estadoField = new TextField("Estado (Activo/Inactivo)");
+
+    FormLayout form = new FormLayout(codigoField, porcentajeField, usosField, estadoField);
+
+    Button btnCrear = new Button("Crear", e -> 
+        Notification.show("Cupones - Crear: " + codigoField.getValue())
+    );
+    btnCrear.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+
+    Button btnConsultar = new Button("Consultar", e -> 
+        Notification.show("Cupones - Consultar Código: " + codigoField.getValue())
+    );
+
+    Button btnActualizar = new Button("Actualizar", e -> 
+        Notification.show("Cupones - Actualizar Código: " + codigoField.getValue())
+    );
+
+    Button btnEliminar = new Button("Eliminar", e -> 
+        Notification.show("Cupones - Eliminar Código: " + codigoField.getValue())
+    );
+    btnEliminar.addThemeVariants(ButtonVariant.LUMO_ERROR);
+
+    Button btnLimpiar = new Button("Limpiar", e -> {
+        codigoField.clear();
+        porcentajeField.clear();
+        usosField.clear();
+        estadoField.clear();
+    });
+
+    HorizontalLayout acciones = new HorizontalLayout(
+        btnCrear, btnConsultar, btnActualizar, btnEliminar, btnLimpiar
+    );
+    acciones.getStyle().set("flex-wrap", "wrap");
+
+    Grid<String[]> grid = new Grid<>();
+    grid.addColumn(row -> row[0]).setHeader("Código").setAutoWidth(true);
+    grid.addColumn(row -> row[1]).setHeader("Porcentaje").setAutoWidth(true);
+    grid.addColumn(row -> row[2]).setHeader("Usos").setAutoWidth(true);
+    grid.addColumn(row -> row[3]).setHeader("Estado").setAutoWidth(true);
+
+    layout.add(form, acciones, grid);
+    return layout;
 }
+
+}
+    
 // CODIGO CUPON -> CODIGO QUE SE DEBE USAR
 // PORCENTAJE -> DESCUENTO
 // USOS CUPON -> CANTIDAD DE USOS QUE SE LE PUEDEN DAR
