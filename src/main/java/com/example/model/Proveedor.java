@@ -4,15 +4,15 @@ public class Proveedor {
   private String idProveedor;
   private String nombreCompleto;
   private String telefono;
-  private String contraseña;
+  private String contrasena;
  //constructores 
 
 public Proveedor (){
    
 }
-  public Proveedor(String idProveedor, String contraseña,String nombreCompleto, String telefono) {
+  public Proveedor(String idProveedor, String contrasena,String nombreCompleto, String telefono) {
     this.idProveedor = idProveedor;
-    this.contraseña = contraseña;
+    this.contrasena = contrasena;
     this.nombreCompleto = nombreCompleto;
     this.telefono = telefono;
   }
@@ -23,11 +23,11 @@ public Proveedor (){
   public void setIdProveedor(String idProveedor) {
     this.idProveedor = idProveedor;
   }
-  public String getContraseña() {
-    return contraseña;
+  public String getContrasena() {
+    return contrasena;
   }
-  public void setContraseña(String contraseña) {
-    this.contraseña = contraseña;
+  public void setContrasena(String contrasena) {
+    this.contrasena = contrasena;
   }
   public String getNombreCompleto() {
     return nombreCompleto;
@@ -41,10 +41,10 @@ public Proveedor (){
   public void setTelefono(String telefono) {
     this.telefono = telefono;
   }
-  
-
-
-
+@Override 
+public String toString(){
+  return "Proveedor [idProveedor=" + idProveedor + ", nombreCompleto=" + nombreCompleto + ", telefono=" + telefono + "]";
+}
 
 
 }
