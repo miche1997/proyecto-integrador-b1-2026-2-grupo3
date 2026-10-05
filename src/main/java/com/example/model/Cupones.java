@@ -34,23 +34,42 @@ public class Cupones {
 
     // Getters y setters
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getCodigo() { return codigo; }
-    public void setCodigo(String codigo) { this.codigo = codigo; }
-
-    public double getPorcentaje() { return porcentaje; }
-    public void setPorcentaje(double porcentaje) { this.porcentaje = porcentaje; }
-
-    public int getUsos() { return usos; }
-    public void setUsos(int usos) { this.usos = usos; }
-
-    public String getEstado() { return estado; }
-    public void setEstado(String estado) { this.estado = estado; }
-
-    public LocalDateTime getFechaCreacion() { return fechaCreacion; }
-    public void setFechaCreacion(LocalDateTime fechaCreacion) { this.fechaCreacion = fechaCreacion; }
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+    public double getPorcentaje() {
+        return porcentaje;
+    }
+    public void setPorcentaje(double porcentaje) {
+        this.porcentaje = porcentaje;
+    }
+    public int getUsos() {
+        return usos;
+    }
+    public void setUsos(int usos) {
+        this.usos = usos;
+    }
+    public String getEstado() {
+        return estado;
+    }
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
 
     @Override
     public String toString() {
