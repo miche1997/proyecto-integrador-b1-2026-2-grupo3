@@ -4,7 +4,7 @@ public class Proveedor {
   private String idProveedor;
   private String nombreCompleto;
   private String telefono;
-  private String contraseña;
+  private String contrasena;
  //constructores 
 
 public Proveedor (){
@@ -23,11 +23,11 @@ public Proveedor (){
   public void setIdProveedor(String idProveedor) {
     this.idProveedor = idProveedor;
   }
-  public String getContraseña() {
-    return contraseña;
+  public String getContrasena() {
+    return contrasena;
   }
-  public void setContraseña(String contraseña) {
-    this.contraseña = contraseña;
+  public void setContrasena(String contrasena) {
+    this.contrasena = contrasena;
   }
   public String getNombreCompleto() {
     return nombreCompleto;
