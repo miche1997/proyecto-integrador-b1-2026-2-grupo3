@@ -1,33 +1,75 @@
 package com.example.model;
 
+import java.time.LocalDateTime;
+
 public class Administrador {
- private String usuario_administrador;
- private  String contrasena;
-// constructores 
+    private long id; // autogenerado por la BD
+    private String usuarioAdministrador;
+    private String contrasena;
+    private String estado; // activo/inactivo
+    private LocalDateTime fechaRegistro;
 
-public Administrador (){
+      // constructor completo
+    public Administrador(long id, String usuarioAdministrador, String contrasena, String estado, LocalDateTime fechaRegistro) {
+        this.id = id;
+        this.usuarioAdministrador = usuarioAdministrador;
+        this.contrasena = contrasena;
+        this.estado = estado;
+        this.fechaRegistro = fechaRegistro;
+    }
 
-}
- public Administrador(String usuario_administrador, String contrasena) {
-    this.usuario_administrador = usuario_administrador;
-    this.contrasena = contrasena;
- }
-// getter and setters 
- public String getUsuario_administrador() {
-    return usuario_administrador;
- }
- public void setUsuario_administrador(String usuario_administrador) {
-    this.usuario_administrador = usuario_administrador;
- }
- public String getContrasena() {
-    return contrasena;
- }
- public void setContrasena(String contrasena) {
-    this.contrasena = contrasena;
- }
+    // constructor sin id
+    public Administrador(String usuarioAdministrador, String contrasena, String estado, LocalDateTime fechaRegistro) {
+      this(0, usuarioAdministrador, contrasena, estado, fechaRegistro);
+    }
+    // constructor vacío
+    public Administrador() {
+        this.fechaRegistro = LocalDateTime.now();
+        this.estado = "activo"; // por defecto
+    }
 
+    // getters y setters
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
+    public String getUsuarioAdministrador() {
+        return usuarioAdministrador;
+    }
 
+    public void setUsuarioAdministrador(String usuarioAdministrador) {
+        this.usuarioAdministrador = usuarioAdministrador;
+    }
 
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public LocalDateTime getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setFechaRegistro(LocalDateTime fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+    @Override
+    public String toString() {
+        return "Administrador [id=" + id + ", usuarioAdministrador=" + usuarioAdministrador + ", contrasena=" + contrasena + ", estado=" + estado + ", fechaRegistro=" + fechaRegistro + "]";
+    }
 }
