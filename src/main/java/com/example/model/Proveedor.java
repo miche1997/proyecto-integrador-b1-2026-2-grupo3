@@ -12,7 +12,7 @@ public Proveedor (){
 }
   public Proveedor(String idProveedor, String contraseña,String nombreCompleto, String telefono) {
     this.idProveedor = idProveedor;
-    this.contraseña = contraseña;
+    this.contrasena = contrasena;
     this.nombreCompleto = nombreCompleto;
     this.telefono = telefono;
   }
