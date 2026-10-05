@@ -10,7 +10,7 @@ public class Proveedor {
 public Proveedor (){
    
 }
-  public Proveedor(String idProveedor, String contraseña,String nombreCompleto, String telefono) {
+  public Proveedor(String idProveedor, String contrasena,String nombreCompleto, String telefono) {
     this.idProveedor = idProveedor;
     this.contrasena = contrasena;
     this.nombreCompleto = nombreCompleto;
@@ -41,10 +41,10 @@ public Proveedor (){
   public void setTelefono(String telefono) {
     this.telefono = telefono;
   }
-  
-
-
-
+@override 
+public String toString(){
+  return "Proveedor [idProveedor=" + idProveedor + ", nombreCompleto=" + nombreCompleto + ", telefono=" + telefono + "]";
+}
 
 
 }
