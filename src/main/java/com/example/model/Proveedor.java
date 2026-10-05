@@ -41,7 +41,7 @@ public Proveedor (){
   public void setTelefono(String telefono) {
     this.telefono = telefono;
   }
-@override 
+@Override 
 public String toString(){
   return "Proveedor [idProveedor=" + idProveedor + ", nombreCompleto=" + nombreCompleto + ", telefono=" + telefono + "]";
 }
