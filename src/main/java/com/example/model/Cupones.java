@@ -10,9 +10,7 @@ public class Cupones {
     private String estado; // activo / inactivo
     private LocalDateTime fechaCreacion;
 
-    // ===================
     // Constructor completo
-    // ===================
     public Cupones(Long id, String codigo, double porcentaje, int usos, String estado, LocalDateTime fechaCreacion) {
         this.id = id;
         this.codigo = codigo;
@@ -22,23 +20,20 @@ public class Cupones {
         this.fechaCreacion = fechaCreacion;
     }
 
-    // ===================
     // Constructor sin ID
-    // ===================
+
     public Cupones(String codigo, double porcentaje, int usos, String estado, LocalDateTime fechaCreacion) {
         this(null, codigo, porcentaje, usos, estado, fechaCreacion);
     }
 
-    // ===================
     // Constructor vacío
-    // ===================
+
     public Cupones() {
         this.fechaCreacion = LocalDateTime.now();
     }
 
-    // ===================
     // Getters y setters
-    // ===================
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
