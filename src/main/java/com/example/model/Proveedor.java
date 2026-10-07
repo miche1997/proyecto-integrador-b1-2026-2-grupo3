@@ -45,6 +45,7 @@ public Proveedor (){
 public String toString(){
   return "Proveedor [idProveedor=" + idProveedor + ", nombreCompleto=" + nombreCompleto + ", telefono=" + telefono + "]";
 }
-
+// metodo concreto 
+  
 
 }
