@@ -88,7 +88,21 @@ public class Productos extends Proveedor {
                 + ", fechaPublicacion=" + fechaPublicacion + "]";
     }
 
-    
+    // metodos 
+    @Override
+   public boolean agregarProducto(Productos producto) {
+        if (producto == null) {
+            return false;
+        }
+}
+@Override 
+public boolean eliminarProducto(String idProducto) {
+        if (idProducto == null) {
+            return false;
+        }
+        return this.listaProductos.removeIf(p -> p.getIdProveedor().equalsIgnoreCase(idProducto));
+    }
+  }
 
 
 
