@@ -40,6 +40,7 @@ public class Administrador {
     public String getUsuarioAdministrador() {
         return usuarioAdministrador;
     }
+    
 
     public void setUsuarioAdministrador(String usuarioAdministrador) {
         this.usuarioAdministrador = usuarioAdministrador;
