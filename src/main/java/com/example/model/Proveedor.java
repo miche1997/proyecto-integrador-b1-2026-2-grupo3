@@ -2,18 +2,19 @@ package com.example.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.time.LocalDateTime;
+
 public class Proveedor {
   private String idProveedor;
   private String nombreCompleto;
   private String telefono;
   private String contrasena;
 private List<Producto> listaProductos = new ArrayList<>();
- //constructores 
-
-public Proveedor (){
-   
 }
-  public Proveedor(String idProveedor, String contrasena,String nombreCompleto, String telefono) {
+ //constructores 
+public Proveedor (){
+}
+  public Proveedor(String idProveedor, String contrasena,String nombreCompleto, String telefono, LocalDateTime fechaCreacionCuenta) {
     this.idProveedor = idProveedor;
     this.contrasena = contrasena;
     this.nombreCompleto = nombreCompleto;
@@ -45,19 +46,24 @@ public Proveedor (){
   public void setTelefono(String telefono) {
     this.telefono = telefono;
   }
+ public List<Producto> getListaProductos() {
+        return listaProductos;
+    }
+
+    public void setListaProductos(List<Producto> listaProductos) {
+        this.listaProductos = listaProductos;
+    }
   // metodos 
  public boolean agregarProducto(Producto producto) {
         if (producto == null) {
-            System.out.println("Error: El producto no puede ser nulo.");
             return false;
         }
         return this.listaProductos.add(producto);
-}
- 
+    }
 
-       public boolean eliminarProducto(String idProducto) {
-        if (idProducto == null || idProducto.trim().isEmpty()) {
-            System.out.println("Error: El ID del producto no es válido.");
+    public boolean eliminarProducto(String idProducto) {
+        if (idProducto == null) {
             return false;
-        } 
-      }
+        }
+        return this.listaProductos.removeIf(p -> p.getIdProducto().equalsIgnoreCase(idProducto));
+    }

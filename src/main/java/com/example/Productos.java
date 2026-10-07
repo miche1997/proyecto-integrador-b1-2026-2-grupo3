@@ -81,7 +81,14 @@ public class Productos extends Proveedor {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    @Override
+    public String toString() {
+        return "Productos [idProducto=" + idProducto + ", nombreProducto=" + nombreProducto + ", Precio=" + Precio
+                + ", marca=" + marca + ", stock=" + stock + ", activo=" + activo + ", descripcion=" + descripcion
+                + ", fechaPublicacion=" + fechaPublicacion + "]";
+    }
 
+    
 
 
 
