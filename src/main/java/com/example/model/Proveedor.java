@@ -1,7 +1,4 @@
 package com.example.model;
-import java.util.ArrayList;
-import java.util.List;
-import com.example.model.Producto;
 
 import java.time.LocalDateTime;
 
@@ -10,17 +7,25 @@ public class Proveedor {
   private String nombreCompleto;
   private String telefono;
   private String contrasena;
-private List<Producto> listaProductos = new ArrayList<>();
-}
- //constructores 
-public Proveedor (){
-}
+  private LocalDateTime fechaCreacionCuenta;
+
+ 
+ //constructores completo
+   
   public Proveedor(String idProveedor, String contrasena,String nombreCompleto, String telefono, LocalDateTime fechaCreacionCuenta) {
     this.idProveedor = idProveedor;
     this.contrasena = contrasena;
     this.nombreCompleto = nombreCompleto;
     this.telefono = telefono;
-    this.listaProductos = new arraylist();
+    this.fechaCreacionCuenta = fechaCreacionCuenta;
+  }
+  // constructor sin id
+  public Proveedor(String contrasena,String nombreCompleto, String telefono, LocalDateTime fechaCreacionCuenta) {
+    this(null, contrasena, nombreCompleto, telefono, fechaCreacionCuenta);
+  }
+ // constructor vacío
+  public Proveedor() {
+    this.fechaCreacionCuenta = LocalDateTime.now();
   }
  // getters  and setters 
   public String getIdProveedor() {
@@ -47,24 +52,15 @@ public Proveedor (){
   public void setTelefono(String telefono) {
     this.telefono = telefono;
   }
- public List<Producto> getListaProductos() {
-        return listaProductos;
-    }
+  public LocalDateTime getFechaCreacionCuenta() {
+    return fechaCreacionCuenta;
+  }
+  public void setFechaCreacionCuenta(LocalDateTime fechaCreacionCuenta) {
+    this.fechaCreacionCuenta = fechaCreacionCuenta;
+  }
+@Override 
+public String toString(){
+  return "Proveedor [idProveedor=" + idProveedor + ", nombreCompleto=" + nombreCompleto + ", telefono=" + telefono + "]";
+}
 
-    public void setListaProductos(List<Producto> listaProductos) {
-        this.listaProductos = listaProductos;
-    }
-  // metodos 
- public boolean agregarProducto(Producto producto) {
-        if (producto == null) {
-            return false;
-        }
-        return this.listaProductos.add(producto);
-    }
-
-    public boolean eliminarProducto(String idProducto) {
-        if (idProducto == null) {
-            return false;
-        }
-        return this.listaProductos.removeIf(p -> p.getIdProducto().equalsIgnoreCase(idProducto));
-    }
+}
