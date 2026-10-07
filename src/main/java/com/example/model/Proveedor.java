@@ -1,10 +1,13 @@
 package com.example.model;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Proveedor {
   private String idProveedor;
   private String nombreCompleto;
   private String telefono;
   private String contrasena;
+private List<Producto> listaProductos = new ArrayList<>();
  //constructores 
 
 public Proveedor (){
@@ -15,6 +18,7 @@ public Proveedor (){
     this.contrasena = contrasena;
     this.nombreCompleto = nombreCompleto;
     this.telefono = telefono;
+    this.listaProductos = new arraylist();
   }
  // getters  and setters 
   public String getIdProveedor() {
@@ -41,11 +45,19 @@ public Proveedor (){
   public void setTelefono(String telefono) {
     this.telefono = telefono;
   }
-@Override 
-public String toString(){
-  return "Proveedor [idProveedor=" + idProveedor + ", nombreCompleto=" + nombreCompleto + ", telefono=" + telefono + "]";
+  // metodos 
+ public boolean agregarProducto(Producto producto) {
+        if (producto == null) {
+            System.out.println("Error: El producto no puede ser nulo.");
+            return false;
+        }
+        return this.listaProductos.add(producto);
 }
-// metodo concreto 
-  
+ 
 
-}
+       public boolean eliminarProducto(String idProducto) {
+        if (idProducto == null || idProducto.trim().isEmpty()) {
+            System.out.println("Error: El ID del producto no es válido.");
+            return false;
+        } 
+      }
