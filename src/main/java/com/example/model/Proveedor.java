@@ -1,6 +1,10 @@
 package com.example.model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.example.Productos;
 
 public class Proveedor {
   private String idProveedor;
@@ -8,9 +12,7 @@ public class Proveedor {
   private String telefono;
   private String contrasena;
   private LocalDateTime fechaCreacionCuenta;
-
- 
- //constructores completo
+private List<Productos> listaProductos = new ArrayList<>(); //constructores completo
    
   public Proveedor(String idProveedor, String contrasena,String nombreCompleto, String telefono, LocalDateTime fechaCreacionCuenta) {
     this.idProveedor = idProveedor;
@@ -62,5 +64,16 @@ public class Proveedor {
 public String toString(){
   return "Proveedor [idProveedor=" + idProveedor + ", nombreCompleto=" + nombreCompleto + ", telefono=" + telefono + "]";
 }
-
+// metodos 
+   public boolean agregarProducto(Productos producto) {
+        if (producto == null) {
+            return false;
+        }
 }
+public boolean eliminarProducto(String idProducto) {
+        if (idProducto == null) {
+            return false;
+        }
+        return this.listaProductos.removeIf(p -> p.getIdProveedor().equalsIgnoreCase(idProducto));
+    }
+  }

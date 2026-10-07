@@ -30,7 +30,7 @@ public class Productos extends Proveedor {
     }
     public Productos(String idProveedor, String contrasena, String nombreCompleto, String telefono, String idProducto,
             String nombreProducto, double precio, String marca, int stock, boolean activo, String descripcion) {
-        super(idProveedor, contrasena, nombreCompleto, telefono);
+        super(idProducto,nombreProducto,precio,stock,activo,descripcion);
         this.idProducto = idProducto;
         this.nombreProducto = nombreProducto;
         Precio = precio;
