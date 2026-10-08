@@ -167,7 +167,7 @@ public class MainView extends VerticalLayout {
         aprobacionField.setItems("Sí", "No");
         aprobacionField.setPlaceholder("Seleccione...");
 
-        FormLayout form = new FormLayout(idField, tituloField, categoriaField, precioField, marcaField, stockField, descripcionField);
+        FormLayout form = new FormLayout(idField, tituloField, categoriaField, precioField, marcaField, stockField, descripcionField, aprobacionField);
 
         Button btnCrear = new Button("Crear", e -> 
             Notification.show("Productos - Crear: " + tituloField.getValue())
