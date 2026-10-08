@@ -9,6 +9,7 @@ import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.tabs.TabSheet;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
@@ -98,34 +99,41 @@ public class MainView extends VerticalLayout {
         VerticalLayout layout = new VerticalLayout();
         layout.setPadding(false);
 
-        TextField idField = new TextField("Código / ID");
-        TextField tituloField = new TextField("Título");
-        TextField categoriaField = new TextField("Categoría");
+        TextField idField = new TextField("ID Proveedor");
+        TextField descripcionField = new TextField("Descripción");
+        TextField correoField = new TextField("Correo");
+        TextField direccionField = new TextField("Dirección");
+        Select<String> aprobacionField = new Select<>();
+        aprobacionField.setLabel("Aprobación");
+        aprobacionField.setItems("Aprobado", "Pendiente", "Rechazado");
+        aprobacionField.setPlaceholder("Seleccione...");
 
-        FormLayout form = new FormLayout(idField, tituloField, categoriaField);
+        FormLayout form = new FormLayout(idField, descripcionField, correoField, direccionField, aprobacionField);
 
-        Button btnCrear = new Button("Crear", e -> 
-            Notification.show("Proveedores - Crear: " + tituloField.getValue())
+        Button btnCrear = new Button("Crear", e ->
+            Notification.show("Proveedores - Crear: " + idField.getValue())
         );
         btnCrear.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
-        Button btnConsultar = new Button("Consultar", e -> 
-            Notification.show("Proveedores - Consultar Código: " + idField.getValue())
+        Button btnConsultar = new Button("Consultar", e ->
+            Notification.show("Proveedores - Consultar ID: " + idField.getValue())
         );
 
-        Button btnActualizar = new Button("Actualizar", e -> 
-            Notification.show("Proveedores - Actualizar Código: " + idField.getValue())
+        Button btnActualizar = new Button("Actualizar", e ->
+            Notification.show("Proveedores - Actualizar ID: " + idField.getValue())
         );
 
-        Button btnEliminar = new Button("Eliminar", e -> 
-            Notification.show("Proveedores - Eliminar Código: " + idField.getValue())
+        Button btnEliminar = new Button("Eliminar", e ->
+            Notification.show("Proveedores - Eliminar ID: " + idField.getValue())
         );
         btnEliminar.addThemeVariants(ButtonVariant.LUMO_ERROR);
 
         Button btnLimpiar = new Button("Limpiar", e -> {
             idField.clear();
-            tituloField.clear();
-            categoriaField.clear();
+            descripcionField.clear();
+            correoField.clear();
+            direccionField.clear();
+            aprobacionField.clear();
         });
 
         HorizontalLayout acciones = new HorizontalLayout(
@@ -134,9 +142,11 @@ public class MainView extends VerticalLayout {
         acciones.getStyle().set("flex-wrap", "wrap");
 
         Grid<String[]> grid = new Grid<>();
-        grid.addColumn(row -> row[0]).setHeader("Código / ID").setAutoWidth(true);
-        grid.addColumn(row -> row[1]).setHeader("Título").setAutoWidth(true);
-        grid.addColumn(row -> row[2]).setHeader("Categoría").setAutoWidth(true);
+        grid.addColumn(row -> row[0]).setHeader("ID Proveedor").setAutoWidth(true);
+        grid.addColumn(row -> row[1]).setHeader("Descripción").setAutoWidth(true);
+        grid.addColumn(row -> row[2]).setHeader("Correo").setAutoWidth(true);
+        grid.addColumn(row -> row[3]).setHeader("Dirección").setAutoWidth(true);
+        grid.addColumn(row -> row[4]).setHeader("Aprobación").setAutoWidth(true);
 
         layout.add(form, acciones, grid);
         return layout;
@@ -242,7 +252,10 @@ public class MainView extends VerticalLayout {
     TextField codigoField = new TextField("Código Cupón");
     TextField porcentajeField = new TextField("Porcentaje Descuento");
     TextField usosField = new TextField("Usos Permitidos");
-    TextField estadoField = new TextField("Estado (Activo/Inactivo)");
+    Select<String> estadoField = new Select<>();
+    estadoField.setLabel("Estado");
+    estadoField.setItems("Activo", "Inactivo");
+    estadoField.setPlaceholder("Seleccione...");
 
     FormLayout form = new FormLayout(codigoField, porcentajeField, usosField, estadoField);
 
