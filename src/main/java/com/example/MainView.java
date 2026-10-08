@@ -155,11 +155,19 @@ public class MainView extends VerticalLayout {
         VerticalLayout layout = new VerticalLayout();
         layout.setPadding(false);
 
-        TextField idField = new TextField("Código / ID");
-        TextField tituloField = new TextField("Título");
-        TextField categoriaField = new TextField("Categoría");
+        TextField idField = new TextField("ID Producto");
+        TextField tituloField = new TextField("ID Proveedor");
+        TextField categoriaField = new TextField("Nombre Producto");
+        TextField precioField = new TextField("Precio");
+        TextField marcaField = new TextField("Marca");
+        TextField stockField = new TextField("Stock");
+        TextField descripcionField = new TextField("Descripción");
+        Select<String> aprobacionField = new Select<>();
+        aprobacionField.setLabel("Activo");
+        aprobacionField.setItems("Sí", "No");
+        aprobacionField.setPlaceholder("Seleccione...");
 
-        FormLayout form = new FormLayout(idField, tituloField, categoriaField);
+        FormLayout form = new FormLayout(idField, tituloField, categoriaField, precioField, marcaField, stockField, descripcionField);
 
         Button btnCrear = new Button("Crear", e -> 
             Notification.show("Productos - Crear: " + tituloField.getValue())
@@ -183,6 +191,11 @@ public class MainView extends VerticalLayout {
             idField.clear();
             tituloField.clear();
             categoriaField.clear();
+            precioField.clear();
+            marcaField.clear();
+            stockField.clear();
+            descripcionField.clear();
+            aprobacionField.clear();
         });
 
         HorizontalLayout acciones = new HorizontalLayout(
