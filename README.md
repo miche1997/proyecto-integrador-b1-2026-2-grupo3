@@ -1,7 +1,7 @@
 # Eat And Bite - Gestión de Entidades (CRUD)
 
-## resumen ejecutivo 
-Eat And Bite requería una solución centralizada para administrar sus operaciones cotidianas sin depender de manipulación manual propensa a errores. Este sistema implementa un módulo integral de Gestión de Entidades (CRUD) que permite a los administradores crear, consultar, modificar y dar de baja información clave del negocio: **Clientes, Proveedores, Productos, Cupones y Administradores. 
+## Resumen ejecutivo 
+Eat And Bite requería una solución centralizada para administrar sus operaciones cotidianas sin depender de manipulación manual propensa a errores. Este sistema implementa un módulo integral de Gestión de Entidades (CRUD) que permite a los administradores crear, consultar, modificar y dar de baja información clave del negocio: Clientes, Proveedores, Productos, Cupones y Administradores. 
 
 ![Vista previa](preview.png)
 
