@@ -1,19 +1,27 @@
 # Eat And Bite - Gestión de Entidades (CRUD)
 
-Gestión de Entidades de Eat And Bite, el cual contiene Clientes, Proveedores, Productos, Cupones y Administrador.
-
-El programa busca que los administradores puedan Crear, Leer, Actualizar y Eliminar datos con mayor facilidad y una interfaz de usuario adecuada. La conexión con una base de datos todavía no está implementada.
+## resumen ejecutivo 
+Eat And Bite requería una solución centralizada para administrar sus operaciones cotidianas sin depender de manipulación manual propensa a errores. Este sistema implementa un módulo integral de Gestión de Entidades (CRUD) que permite a los administradores crear, consultar, modificar y dar de baja información clave del negocio: **Clientes, Proveedores, Productos, Cupones y Administradores. 
 
 ![Vista previa](preview.png)
+
+## Arquitectura 
+su arquitectura esta basado en un sisitema monolitico en capas en las cuales tenemos definidas :
+Capa de Presentación (UI)Desarrollada con Vaadin 25, maneja componentes reactivos y vistas en el navegador sin requerir frameworks de frontend independientes.
+Capa de Servicio y Negocio: Implementada con Spring Boot 4, orquesta las reglas de validación, lógica de cupones y operaciones CRUD.
+Capa de Datos: En esta fase inicial, las entidades residen en memoria/colecciones locales, preparadas para acoplarse a repositorios JPA/Hibernate en fases posteriores usando postqres neo. tech 
 
 ## Tecnologías
 
 - Java 25
 - Spring Boot 4
 - Vaadin 25
+- postqres proximamente
 
 ## Requisitos
-
+- Java 25 instalado.
+JDK 25 instalado y configurado en la variable de entorno.
+- Docker (opcional, para despliegue en contenedores).
 - Java 25 instalado.
 
 ## Inicializar la Gestión de Entidades
