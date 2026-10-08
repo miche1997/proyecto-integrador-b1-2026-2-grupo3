@@ -156,7 +156,7 @@ public class MainView extends VerticalLayout {
         layout.setPadding(false);
 
         TextField idField = new TextField("ID Producto");
-        TextField tituloField = new TextField("ID Proveedor");
+        TextField idProveedorField = new TextField("ID Proveedor");
         TextField categoriaField = new TextField("Nombre Producto");
         TextField precioField = new TextField("Precio");
         TextField marcaField = new TextField("Marca");
@@ -167,10 +167,10 @@ public class MainView extends VerticalLayout {
         aprobacionField.setItems("Sí", "No");
         aprobacionField.setPlaceholder("Seleccione...");
 
-        FormLayout form = new FormLayout(idField, tituloField, categoriaField, precioField, marcaField, stockField, descripcionField, aprobacionField);
+        FormLayout form = new FormLayout(idField, idProveedorField, categoriaField, precioField, marcaField, stockField, descripcionField, aprobacionField);
 
         Button btnCrear = new Button("Crear", e -> 
-            Notification.show("Productos - Crear: " + tituloField.getValue())
+            Notification.show("Productos - Crear: " + idField.getValue())
         );
         btnCrear.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
@@ -189,7 +189,7 @@ public class MainView extends VerticalLayout {
 
         Button btnLimpiar = new Button("Limpiar", e -> {
             idField.clear();
-            tituloField.clear();
+            idProveedorField.clear();
             categoriaField.clear();
             precioField.clear();
             marcaField.clear();
@@ -205,8 +205,9 @@ public class MainView extends VerticalLayout {
 
         Grid<String[]> grid = new Grid<>();
         grid.addColumn(row -> row[0]).setHeader("Código / ID").setAutoWidth(true);
-        grid.addColumn(row -> row[1]).setHeader("Título").setAutoWidth(true);
-        grid.addColumn(row -> row[2]).setHeader("Categoría").setAutoWidth(true);
+        grid.addColumn(row -> row[1]).setHeader("usuarioAdministrador").setAutoWidth(true);
+        grid.addColumn(row -> row[2]).setHeader("contrasena").setAutoWidth(true);
+        grid.addColumn(row -> row[3]).setHeader("estado").setAutoWidth(true);
 
         layout.add(form, acciones, grid);
         return layout;
@@ -215,34 +216,39 @@ public class MainView extends VerticalLayout {
         VerticalLayout layout = new VerticalLayout();
         layout.setPadding(false);
 
-        TextField idField = new TextField("Código / ID");
-        TextField tituloField = new TextField("Título");
-        TextField categoriaField = new TextField("Categoría");
+        TextField idField = new TextField("ID");
+        TextField usuarioField = new TextField("usuarioAdministrador");
+        TextField contrasenaField = new TextField("contrasena");
+        Select<String> estadoField = new Select<>();
+        estadoField.setLabel("Estado");
+        estadoField.setItems("Activo", "Inactivo");
+        estadoField.setPlaceholder("Seleccione...");
 
-        FormLayout form = new FormLayout(idField, tituloField, categoriaField);
+        FormLayout form = new FormLayout(idField, usuarioField, contrasenaField, estadoField);
 
         Button btnCrear = new Button("Crear", e -> 
-            Notification.show("Administrador - Crear: " + tituloField.getValue())
+            Notification.show("Administrador - Crear: " + usuarioField.getValue())
         );
         btnCrear.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
         Button btnConsultar = new Button("Consultar", e -> 
-            Notification.show("Administrador - Consultar Código: " + idField.getValue())
+            Notification.show("Administrador - Consultar ID: " + idField.getValue())
         );
 
         Button btnActualizar = new Button("Actualizar", e -> 
-            Notification.show("Administrador - Actualizar Código: " + idField.getValue())
+            Notification.show("Administrador - Actualizar ID: " + idField.getValue())
         );
 
         Button btnEliminar = new Button("Eliminar", e -> 
-            Notification.show("Administrador - Eliminar Código: " + idField.getValue())
+            Notification.show("Administrador - Eliminar ID: " + idField.getValue())
         );
         btnEliminar.addThemeVariants(ButtonVariant.LUMO_ERROR);
 
         Button btnLimpiar = new Button("Limpiar", e -> {
             idField.clear();
-            tituloField.clear();
-            categoriaField.clear();
+            usuarioField.clear();
+            contrasenaField.clear();
+            estadoField.clear();
         });
 
         HorizontalLayout acciones = new HorizontalLayout(
@@ -252,9 +258,9 @@ public class MainView extends VerticalLayout {
 
         Grid<String[]> grid = new Grid<>();
         grid.addColumn(row -> row[0]).setHeader("Código / ID").setAutoWidth(true);
-        grid.addColumn(row -> row[1]).setHeader("Título").setAutoWidth(true);
-        grid.addColumn(row -> row[2]).setHeader("Categoría").setAutoWidth(true);
-
+        grid.addColumn(row -> row[1]).setHeader("usuarioAdministrador").setAutoWidth(true);
+        grid.addColumn(row -> row[2]).setHeader("contrasena").setAutoWidth(true);
+        grid.addColumn(row -> row[3]).setHeader("estado").setAutoWidth(true);
         layout.add(form, acciones, grid);
         return layout;
     }
