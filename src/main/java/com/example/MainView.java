@@ -28,17 +28,17 @@ public class MainView extends VerticalLayout {
         TabSheet tabSheet = new TabSheet();
         tabSheet.setWidthFull();
 
-        tabSheet.add("Clientes", crearSeccionEntidad1());
-        tabSheet.add("Proveedores", crearSeccionEntidad2());
-        tabSheet.add("Productos", crearSeccionEntidad3());
-        tabSheet.add("Administrador", crearSeccionEntidad4());
-        tabSheet.add("Cupones", crearSeccionEntidad5());
+        tabSheet.add("Clientes", crearSeccionClientes());
+        tabSheet.add("Proveedores", crearSeccionProveedores());
+        tabSheet.add("Productos", crearSeccionProductos());
+        tabSheet.add("Administrador", crearSeccionAdministrador());
+        tabSheet.add("Cupones", crearSeccionCupones());
 
         add(titulo, tabSheet);
     }
 
     // Método privado para gestionar la primera entidad
-    private Component crearSeccionEntidad1() {
+    private Component crearSeccionClientes() {
         VerticalLayout layout = new VerticalLayout();
         layout.setPadding(false);
 
@@ -94,7 +94,7 @@ public class MainView extends VerticalLayout {
     }
 
     // Método privado para gestionar la segunda entidad
-    private Component crearSeccionEntidad2() {
+    private Component crearSeccionProveedores() {
         VerticalLayout layout = new VerticalLayout();
         layout.setPadding(false);
 
@@ -141,7 +141,7 @@ public class MainView extends VerticalLayout {
         layout.add(form, acciones, grid);
         return layout;
     }
- private Component crearSeccionEntidad3() {
+ private Component crearSeccionProductos() {
         VerticalLayout layout = new VerticalLayout();
         layout.setPadding(false);
 
@@ -188,7 +188,7 @@ public class MainView extends VerticalLayout {
         layout.add(form, acciones, grid);
         return layout;
     }
- private Component crearSeccionEntidad4() {
+ private Component crearSeccionAdministrador() {
         VerticalLayout layout = new VerticalLayout();
         layout.setPadding(false);
 
@@ -235,7 +235,7 @@ public class MainView extends VerticalLayout {
         layout.add(form, acciones, grid);
         return layout;
     }
- private Component crearSeccionEntidad5() {
+ private Component crearSeccionCupones() {
     VerticalLayout layout = new VerticalLayout();
     layout.setPadding(false);
 
