@@ -205,9 +205,9 @@ public class MainView extends VerticalLayout {
 
         Grid<String[]> grid = new Grid<>();
         grid.addColumn(row -> row[0]).setHeader("Código / ID").setAutoWidth(true);
-        grid.addColumn(row -> row[1]).setHeader("usuarioAdministrador").setAutoWidth(true);
-        grid.addColumn(row -> row[2]).setHeader("contrasena").setAutoWidth(true);
-        grid.addColumn(row -> row[3]).setHeader("estado").setAutoWidth(true);
+        grid.addColumn(row -> row[1]).setHeader("Usuario Administrador").setAutoWidth(true);
+        grid.addColumn(row -> row[2]).setHeader("Contraseña").setAutoWidth(true);
+        grid.addColumn(row -> row[3]).setHeader("Estado").setAutoWidth(true);
 
         layout.add(form, acciones, grid);
         return layout;
@@ -217,8 +217,8 @@ public class MainView extends VerticalLayout {
         layout.setPadding(false);
 
         TextField idField = new TextField("ID");
-        TextField usuarioField = new TextField("usuarioAdministrador");
-        TextField contrasenaField = new TextField("contrasena");
+        TextField usuarioField = new TextField("Usuario Administrador");
+        TextField contrasenaField = new TextField("Contraseña");
         Select<String> estadoField = new Select<>();
         estadoField.setLabel("Estado");
         estadoField.setItems("Activo", "Inactivo");
@@ -258,9 +258,9 @@ public class MainView extends VerticalLayout {
 
         Grid<String[]> grid = new Grid<>();
         grid.addColumn(row -> row[0]).setHeader("Código / ID").setAutoWidth(true);
-        grid.addColumn(row -> row[1]).setHeader("usuarioAdministrador").setAutoWidth(true);
-        grid.addColumn(row -> row[2]).setHeader("contrasena").setAutoWidth(true);
-        grid.addColumn(row -> row[3]).setHeader("estado").setAutoWidth(true);
+        grid.addColumn(row -> row[1]).setHeader("Usuario Administrador").setAutoWidth(true);
+        grid.addColumn(row -> row[2]).setHeader("Contraseña").setAutoWidth(true);
+        grid.addColumn(row -> row[3]).setHeader("Estado").setAutoWidth(true);
         layout.add(form, acciones, grid);
         return layout;
     }
