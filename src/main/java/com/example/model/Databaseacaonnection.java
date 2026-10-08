@@ -5,17 +5,16 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Databaseacaonnection {
-private static final String URL = "jdbc:postgresql://ep-example.us-east-2.aws.neon.tech/neondb?sslmode=require";
-    private static final String USER = "tu_usuario_neon";
-    private static final String PASSWORD = "tu_password_neon";
+    // Las credenciales se leen de variables de entorno para no subirlas a GitHub.
+    // Ejemplo de DB_URL: jdbc:postgresql://ep-xxxx.us-east-2.aws.neon.tech/neondb?sslmode=require
+    private static final String URL = System.getenv("DB_URL");
+    private static final String USER = System.getenv("DB_USER");
+    private static final String PASSWORD = System.getenv("DB_PASSWORD");
 
     public static Connection getConnection() throws SQLException {
-        try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new SQLException("Driver PostgreSQL no encontrado", e);
+        if (URL == null || USER == null || PASSWORD == null) {
+            throw new SQLException("Faltan las variables de entorno DB_URL, DB_USER y/o DB_PASSWORD");
         }
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }
-
